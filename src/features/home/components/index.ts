@@ -1,6 +1,6 @@
 export { default as Chart } from "./Chart";
 export { default as MatrixRainingCode } from "./MatrixRainingCode";
-export { default as AnimatedTitle } from "./AnimatedTitle";
+export { default as TextSectionAnimatedTitle } from "./TextSectionAnimatedTitle";
 export { default as TextSection } from "./TextSection";
 export { default as CoinImageMarquee } from "./CoinImageMarquee";
 export { default as CommunityIntroduction } from "./CommunityIntroduction";
@@ -9,3 +9,4 @@ export { default as TokenGoals } from "./TokenGoals";
 export { default as AnimatedSeparators } from "./AnimatedSeparators";
 export { default as AuroraTitle } from "./AuroraTitle";
 export { default as TokenGoalsGoal } from "./TokenGoalsGoal";
+export { default as TextSectionAnimatedP } from "./TextSectionAnimatedP";

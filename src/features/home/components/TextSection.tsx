@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
-import AnimatedTitle from "./AnimatedTitle";
+import { TextSectionAnimatedTitle, TextSectionAnimatedP } from ".";
 
 interface LinkProps {
   content: string;
@@ -22,7 +20,7 @@ interface TextSectionProps {
 const TextSection = ({ animatedTitle, paragraphs, link }: TextSectionProps) => {
   return (
     <div className="flex flex-col items-center w-full">
-      <AnimatedTitle
+      <TextSectionAnimatedTitle
         text={animatedTitle.text}
         reverse={animatedTitle.reverse}
         tilted={animatedTitle.tilted}
@@ -30,7 +28,7 @@ const TextSection = ({ animatedTitle, paragraphs, link }: TextSectionProps) => {
 
       <div className="gummy-big flex max-w-[1000px] flex-col items-center justify-center gap-2 text-center lg:gap-4">
         {paragraphs.map((p, index) => (
-          <AnimatedP key={index} phrase={p} />
+          <TextSectionAnimatedP key={index} phrase={p} />
         ))}
       </div>
 
@@ -40,7 +38,7 @@ const TextSection = ({ animatedTitle, paragraphs, link }: TextSectionProps) => {
             to={link.path}
             className="text-[var(--coin-purple)] transition-all hover:underline dark:text-[var(--coin-font)]"
           >
-            <AnimatedP phrase={link.content} />
+            <TextSectionAnimatedP phrase={link.content} />
           </Link>
         </p>
       )}
@@ -49,25 +47,3 @@ const TextSection = ({ animatedTitle, paragraphs, link }: TextSectionProps) => {
 };
 
 export default TextSection;
-
-const AnimatedP = ({ phrase }: { phrase: string }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
-  return (
-    <motion.span
-      ref={ref}
-      className="AnimatedP"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }}
-      transition={{
-        duration: 0.5,
-        delay: 0.2,
-      }}
-    >
-      {phrase}
-    </motion.span>
-  );
-};

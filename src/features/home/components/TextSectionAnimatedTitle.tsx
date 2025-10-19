@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-const AnimatedTitle = ({
+const TextSectionAnimatedTitle = ({
   text,
   reverse,
   tilted,
@@ -57,4 +57,4 @@ const AnimatedTitle = ({
   );
 };
 
-export default AnimatedTitle;
+export default TextSectionAnimatedTitle;
