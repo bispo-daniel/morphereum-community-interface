@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Minus, Moon } from "lucide-react";
 
-import { TokenGoal } from "./";
+import { TokenGoalsGoal } from ".";
 
 const TokenGoals = ({ celebs }: { celebs?: boolean }) => {
   const priceGoals = [
@@ -143,7 +143,7 @@ const TokenGoals = ({ celebs }: { celebs?: boolean }) => {
       />
       {!celebs &&
         priceGoals.map((goal, index) => (
-          <TokenGoal
+          <TokenGoalsGoal
             key={index}
             title={goal.price}
             text={goal.text}
@@ -157,7 +157,7 @@ const TokenGoals = ({ celebs }: { celebs?: boolean }) => {
 
       {celebs &&
         celebsGoals.map((goal, index) => (
-          <TokenGoal
+          <TokenGoalsGoal
             key={index}
             title={goal.celeb}
             text={goal.text}

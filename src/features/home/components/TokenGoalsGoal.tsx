@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 import { Separator } from "@/components/ui/separator";
 
-const TokenGoal = ({
+const TokenGoalsGoal = ({
   title,
   text,
   xLink,
@@ -100,4 +100,4 @@ const TokenGoal = ({
   );
 };
 
-export default TokenGoal;
+export default TokenGoalsGoal;
