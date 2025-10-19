@@ -1,0 +1,40 @@
+/* source: https://codepen.io/LiaTsernant/pen/dywewdw */
+
+:root {
+  --font-color: #edeee9;
+  --line-height: 0.17;
+  --font-size: 2em;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --font-size: 1.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size: 1.7em;
+  }
+}
+
+#text-container {
+  width: 100%;
+  text-shadow: var(--font-color) 1px 1px 0;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brinks {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  font-weight: 600;
+  line-height: var(--line-height);
+  text-align: center;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  font-family: "Sour Gummy", serif;
+}
