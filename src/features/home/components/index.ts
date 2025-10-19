@@ -11,3 +11,5 @@ export { default as AuroraTitle } from "./AuroraTitle";
 export { default as TokenGoalsGoal } from "./TokenGoalsGoal";
 export { default as TextSectionAnimatedP } from "./TextSectionAnimatedP";
 export { default as RotatingCoinCanvasMesh } from "./RotatingCoinCanvasMesh";
+export { default as CommunityIntroductionAnimatedTitle } from "./CommunityIntroductionAnimatedTitle";
+export { default as CommunityIntroductionAnimatedP } from "./CommunityIntroductionAnimatedP";

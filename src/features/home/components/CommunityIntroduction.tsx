@@ -1,57 +1,7 @@
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-
-interface AnimatedTitleProps {
-  children: React.ReactNode;
-}
-
-const AnimatedTitle = ({ children }: AnimatedTitleProps) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
-  return (
-    <motion.div
-      ref={ref}
-      className="AnimatedTitle"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -20 }}
-      transition={{
-        duration: 0.6,
-        delay: 0.1,
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-interface AnimatedPProps {
-  children: React.ReactNode;
-}
-
-const AnimatedP = ({ children }: AnimatedPProps) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
-  return (
-    <motion.div
-      ref={ref}
-      className="AnimatedP"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }}
-      transition={{
-        duration: 0.5,
-        delay: 0.2,
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-};
+import {
+  CommunityIntroductionAnimatedP,
+  CommunityIntroductionAnimatedTitle,
+} from ".";
 
 const CommunityIntroduction = () => {
   const paragraphs = [
@@ -83,16 +33,18 @@ const CommunityIntroduction = () => {
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-6 rounded-[12px] bg-transparent bg-opacity-20 py-8 text-center backdrop-blur-md backdrop-filter lg:gap-12 lg:px-8 lg:py-16">
-      <AnimatedTitle>
-        <span className="gummy-giga text-center">
+      <CommunityIntroductionAnimatedTitle>
+        <span className="text-center gummy-giga">
           <p>COMUNIDADE</p>
           <p className="text-[var(--coin-pink)]">$Morphereum</p>
         </span>
-      </AnimatedTitle>
+      </CommunityIntroductionAnimatedTitle>
 
       <div className="gummy-big flex max-w-[1000px] flex-col items-center justify-center gap-2 lg:gap-4">
         {paragraphs.map((content, index) => (
-          <AnimatedP key={index}>{content}</AnimatedP>
+          <CommunityIntroductionAnimatedP key={index}>
+            {content}
+          </CommunityIntroductionAnimatedP>
         ))}
       </div>
     </div>
