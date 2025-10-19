@@ -6,3 +6,5 @@ export { default as Alert } from "./Alert";
 export { default as ScrollToTop } from "./ScrollToTop";
 export { default as DynamicIcon } from "./DynamicIcon";
 export { default as IconMap } from "./IconMap";
+export { default as SkeletonButton } from "./SkeletonButton";
+export { default as SkeletonP } from "./SkeletonP";
