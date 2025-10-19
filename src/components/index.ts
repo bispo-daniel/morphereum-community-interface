@@ -8,3 +8,4 @@ export { default as DynamicIcon } from "./DynamicIcon";
 export { default as IconMap } from "./IconMap";
 export { default as SkeletonButton } from "./SkeletonButton";
 export { default as SkeletonP } from "./SkeletonP";
+export { default as TokenMarqueeItem } from "./TokenMarqueeItem";
