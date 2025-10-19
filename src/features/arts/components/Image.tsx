@@ -6,22 +6,8 @@ import { useInView } from "react-intersection-observer";
 import { tokenImg } from "@/assets/images";
 import { Button } from "@/components/ui/button";
 
+import { ImageDownloadButton } from ".";
 import { Arts, useArts } from "../api/getArts";
-
-const DownloadButton = ({
-  downloadImage,
-  placeholder = "download",
-}: {
-  downloadImage: () => void;
-  placeholder?: string;
-}) => (
-  <button
-    className="mt-auto flex h-8 min-h-8 min-w-8 items-center justify-center rounded-full bg-white px-2 transition-all duration-300 [filter:drop-shadow(0px_0px_2px_var(--coin-pink))] hover:scale-105 hover:[filter:drop-shadow(0px_0px_4px_var(--coin-pink))]"
-    onClick={downloadImage}
-  >
-    <span className="arts-text text-[var(--coin-pink)]">{placeholder}</span>
-  </button>
-);
 
 const Image = ({
   url,
@@ -114,7 +100,7 @@ const Image = ({
 
         {!isFullscreen && (
           <div className="absolute inset-0 flex flex-col-reverse justify-between p-4 transition-colors duration-500 sm:hidden sm:bg-[#0001] sm:group-hover:flex sm:dark:bg-[#0004]">
-            <div className="flex w-full flex-row items-center justify-between">
+            <div className="flex flex-row items-center justify-between w-full">
               <p
                 className="arts-text max-w-[125px] truncate text-[var(--coin-pink)] transition-all hover:underline dark:text-white dark:hover:text-[var(--coin-pink)]"
                 onClick={openLink}
@@ -122,7 +108,7 @@ const Image = ({
                 {creator}
               </p>
 
-              <DownloadButton downloadImage={downloadImage} />
+              <ImageDownloadButton downloadImage={downloadImage} />
             </div>
           </div>
         )}
@@ -130,7 +116,7 @@ const Image = ({
 
       {isFullscreen && closeFullscreen && (
         <div className="hidden h-[500px] max-h-[500px] flex-col gap-4 overflow-hidden rounded-r-2xl border-l bg-background p-4 md:flex">
-          <div className="flex w-full items-center justify-between">
+          <div className="flex items-center justify-between w-full">
             <p
               className="arts-text max-w-[125px] truncate text-[var(--coin-pink)] hover:cursor-pointer hover:underline"
               onClick={openLink}
@@ -150,7 +136,7 @@ const Image = ({
             {description}
           </p>
 
-          <DownloadButton downloadImage={downloadImage} />
+          <ImageDownloadButton downloadImage={downloadImage} />
         </div>
       )}
     </>
