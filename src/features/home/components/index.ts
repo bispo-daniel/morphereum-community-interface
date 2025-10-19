@@ -8,3 +8,4 @@ export { default as RotatingCoinCanvas } from "./RotatingCoinCanvas";
 export { default as TokenGoals } from "./TokenGoals";
 export { default as AnimatedSeparators } from "./AnimatedSeparators";
 export { default as AuroraTitle } from "./AuroraTitle";
+export { default as TokenGoal } from "./TokenGoal";
