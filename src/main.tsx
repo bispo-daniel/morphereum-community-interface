@@ -6,7 +6,6 @@ import WebFont from "webfontloader";
 import App from "./App.tsx";
 import { Toaster } from "./components/ui/toaster.tsx";
 import "./index.css";
-import "./assets/css/bg-liquid-glass.css";
 import { ThemeProvider } from "./providers/theme";
 
 WebFont.load({
