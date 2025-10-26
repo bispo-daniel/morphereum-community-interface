@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import env from "@/config";
+
 import { type Arts as ArtsType, useArts } from "./api/getArts";
 import {
   CreateNewArtSheet,
@@ -109,7 +111,7 @@ const Arts = () => {
                 ))}
 
               {(isFetching || isFetchingNextPage) &&
-                Array.from({ length: 12 }).map((_, index) => (
+                Array.from({ length: env.VITE_ART_RECORDS_PER_PAGE }).map((_, index) => (
                   <ImageSkeleton height={350} key={index} />
                 ))}
             </div>
